@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmpxh41yj02v7"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1154.0
+offset_bottom = 651.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
