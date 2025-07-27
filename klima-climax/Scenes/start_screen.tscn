@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://caxa2jkldu305"]
+
+[ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_i8r30"]
+
+[node name="Start screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 1155.0
+offset_bottom = 650.0
+texture = ExtResource("1_i8r30")
+expand_mode = 2
