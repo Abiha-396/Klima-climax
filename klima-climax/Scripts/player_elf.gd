@@ -1,11 +1,10 @@
 extends CharacterBody2D
+@onready var animated_sprite = $AnimatedSprite2D
+@export	var gravity =400
 
-@export var speed = 400
-
-func get_input():
-	var input_direction = Input.get_vector("Move_left", "Move_right", "Move_up", "Move_down")
-	velocity = input_direction * speed
 
 func _physics_process(delta):
-	get_input()
+	velocity.y += gravity *delta
+	
+	
 	move_and_slide()
