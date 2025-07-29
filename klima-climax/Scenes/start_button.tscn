@@ -1,18 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://btwv0q2vkvoaa"]
+[gd_scene load_steps=5 format=3 uid="uid://btwv0q2vkvoaa"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_54fj7"]
+[ext_resource type="Texture2D" uid="uid://bmjumeelpgcem" path="res://Assets/User Interface/Button/Rect/Fill/Default.png" id="1_jmjxx"]
+[ext_resource type="Texture2D" uid="uid://dr1sd5yk6k1wc" path="res://Assets/User Interface/Button/Rect/Fill/Hover.png" id="1_tqs16"]
+[ext_resource type="FontFile" uid="uid://txfcbsmdf1u2" path="res://Assets/Fonts/Scabber.otf" id="3_4gr3n"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqs16"]
-content_margin_left = 484.0
+[sub_resource type="LabelSettings" id="LabelSettings_rrujt"]
+font = ExtResource("3_4gr3n")
+font_size = 39
+font_color = Color(0.537255, 0.443137, 0.415686, 1)
+outline_size = 5
+outline_color = Color(0.372549, 0.266667, 0.235294, 1)
 
-[sub_resource type="Theme" id="Theme_xhk71"]
-Button/icons/icon = SubResource("ViewportTexture_54fj7")
-Button/styles/disabled = SubResource("StyleBoxTexture_tqs16")
+[node name="Start button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Start button" type="Button"]
-offset_left = 191.0
-offset_top = 92.0
-offset_right = 327.0
-offset_bottom = 139.0
-theme = SubResource("Theme_xhk71")
-text = "Start"
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_jmjxx")
+texture_hover = ExtResource("1_tqs16")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 15.0
+offset_right = 198.0
+offset_bottom = 98.0
+text = "Start
+"
+label_settings = SubResource("LabelSettings_rrujt")

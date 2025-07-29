@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://caxa2jkldu305"]
+[gd_scene load_steps=6 format=3 uid="uid://caxa2jkldu305"]
 
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_i8r30"]
+[ext_resource type="FontFile" uid="uid://txfcbsmdf1u2" path="res://Assets/Fonts/Scabber.otf" id="2_ainjc"]
+[ext_resource type="PackedScene" uid="uid://btwv0q2vkvoaa" path="res://Scenes/start_button.tscn" id="3_60ddj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_60ddj"]
+font = ExtResource("2_ainjc")
+font_size = 150
+font_color = Color(0.442307, 0.309142, 0.0361819, 1)
+outline_color = Color(0.510919, 0.650405, 0.2635, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_5e717"]
+font_size = 150
+font_color = Color(0.679076, 0.407977, 0.256107, 1)
+outline_size = 15
+outline_color = Color(0.292564, 0.20062, 0.0220882, 1)
 
 [node name="Start screen" type="Control"]
 layout_mode = 3
@@ -18,3 +33,28 @@ offset_right = 1155.0
 offset_bottom = 650.0
 texture = ExtResource("1_i8r30")
 expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 58.0
+offset_right = 1219.0
+offset_bottom = 332.0
+text = "Klima-Climax"
+label_settings = SubResource("LabelSettings_60ddj")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 58.0
+offset_right = 1096.0
+offset_bottom = 215.0
+text = "Klima-Climax"
+label_settings = SubResource("LabelSettings_5e717")
+
+[node name="Start button" parent="." instance=ExtResource("3_60ddj")]
+layout_mode = 1
+offset_left = 479.0
+offset_top = 255.0
+offset_right = 455.0
+offset_bottom = 246.0
