@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://caxa2jkldu305"]
+[gd_scene load_steps=10 format=3 uid="uid://caxa2jkldu305"]
 
+[ext_resource type="Script" uid="uid://bg0clpohvao3q" path="res://Scripts/start_screen.gd" id="1_5a7ho"]
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_i8r30"]
 [ext_resource type="FontFile" uid="uid://txfcbsmdf1u2" path="res://Assets/Fonts/Scabber.otf" id="2_ainjc"]
 [ext_resource type="PackedScene" uid="uid://btwv0q2vkvoaa" path="res://Scenes/start_button.tscn" id="3_60ddj"]
+[ext_resource type="Texture2D" uid="uid://bmjumeelpgcem" path="res://Assets/User Interface/Button/Rect/Fill/Default.png" id="4_5e717"]
+[ext_resource type="Texture2D" uid="uid://dr1sd5yk6k1wc" path="res://Assets/User Interface/Button/Rect/Fill/Hover.png" id="5_nqnrp"]
+[ext_resource type="LabelSettings" uid="uid://c6fal5c8hx0x3" path="res://Assets/Fonts/Button themes/start_button.tres" id="6_5a7ho"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_60ddj"]
 font = ExtResource("2_ainjc")
@@ -13,9 +17,9 @@ shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_5e717"]
 font_size = 150
-font_color = Color(0.679076, 0.407977, 0.256107, 1)
+font_color = Color(0.678431, 0.407843, 0.254902, 1)
 outline_size = 15
-outline_color = Color(0.292564, 0.20062, 0.0220882, 1)
+outline_color = Color(0.372549, 0.266667, 0.235294, 1)
 
 [node name="Start screen" type="Control"]
 layout_mode = 3
@@ -24,13 +28,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5a7ho")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = -4.0
-offset_right = 1155.0
-offset_bottom = 650.0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 1164.0
+offset_bottom = 655.0
 texture = ExtResource("1_i8r30")
 expand_mode = 2
 
@@ -54,7 +59,58 @@ label_settings = SubResource("LabelSettings_5e717")
 
 [node name="Start button" parent="." instance=ExtResource("3_60ddj")]
 layout_mode = 1
-offset_left = 479.0
+offset_left = 476.0
 offset_top = 255.0
-offset_right = 455.0
-offset_bottom = 246.0
+offset_right = 457.0
+offset_bottom = 255.0
+
+[node name="Sounds" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 487.0
+offset_right = 663.0
+offset_bottom = 533.0
+
+[node name="TextureButton" type="TextureButton" parent="Sounds"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -21.0
+offset_right = 179.0
+offset_bottom = 63.0
+texture_normal = ExtResource("4_5e717")
+texture_hover = ExtResource("5_nqnrp")
+
+[node name="Label" type="Label" parent="Sounds"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -5.0
+offset_right = 213.0
+offset_bottom = 80.0
+text = "Sounds
+"
+label_settings = ExtResource("6_5a7ho")
+
+[node name="Menu_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 372.0
+offset_right = 642.0
+offset_bottom = 421.0
+
+[node name="TextureButton2" type="TextureButton" parent="Menu_button"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -11.0
+offset_right = 168.0
+offset_bottom = 73.0
+texture_normal = ExtResource("4_5e717")
+texture_hover = ExtResource("5_nqnrp")
+
+[node name="Label3" type="Label" parent="Menu_button"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 216.0
+offset_bottom = 91.0
+text = "Menu"
+label_settings = ExtResource("6_5a7ho")

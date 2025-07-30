@@ -2,14 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bmjumeelpgcem" path="res://Assets/User Interface/Button/Rect/Fill/Default.png" id="1_jmjxx"]
 [ext_resource type="Texture2D" uid="uid://dr1sd5yk6k1wc" path="res://Assets/User Interface/Button/Rect/Fill/Hover.png" id="1_tqs16"]
-[ext_resource type="FontFile" uid="uid://txfcbsmdf1u2" path="res://Assets/Fonts/Scabber.otf" id="3_4gr3n"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_rrujt"]
-font = ExtResource("3_4gr3n")
-font_size = 39
-font_color = Color(0.537255, 0.443137, 0.415686, 1)
-outline_size = 5
-outline_color = Color(0.372549, 0.266667, 0.235294, 1)
+[ext_resource type="Script" uid="uid://bd3asss0mvkq2" path="res://Start_button.gd" id="3_4gr3n"]
+[ext_resource type="LabelSettings" uid="uid://c6fal5c8hx0x3" path="res://Assets/Fonts/Button themes/start_button.tres" id="3_jmjxx"]
 
 [node name="Start button" type="Control"]
 layout_mode = 3
@@ -27,6 +21,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_jmjxx")
 texture_hover = ExtResource("1_tqs16")
+script = ExtResource("3_4gr3n")
 
 [node name="Label" type="Label" parent="TextureButton"]
 layout_mode = 0
@@ -36,4 +31,6 @@ offset_right = 198.0
 offset_bottom = 98.0
 text = "Start
 "
-label_settings = SubResource("LabelSettings_rrujt")
+label_settings = ExtResource("3_jmjxx")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

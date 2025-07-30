@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c6fal5c8hx0x3"]
+
+[ext_resource type="FontFile" uid="uid://txfcbsmdf1u2" path="res://Assets/Fonts/Scabber.otf" id="1_hf7nr"]
+
+[resource]
+font = ExtResource("1_hf7nr")
+font_size = 39
+font_color = Color(0.537255, 0.443137, 0.415686, 1)
+outline_size = 5
+outline_color = Color(0.372549, 0.266667, 0.235294, 1)
