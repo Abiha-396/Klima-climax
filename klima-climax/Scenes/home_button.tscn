@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://5o7phu2ql3dh"]
+
+[ext_resource type="Script" uid="uid://vr7gl5272hfx" path="res://Scripts/Home_button.gd" id="1_eppnf"]
+[ext_resource type="Texture2D" uid="uid://bmjumeelpgcem" path="res://Assets/User Interface/Button/Rect/Fill/Default.png" id="2_3xqhr"]
+[ext_resource type="Texture2D" uid="uid://dr1sd5yk6k1wc" path="res://Assets/User Interface/Button/Rect/Fill/Hover.png" id="3_yxep6"]
+[ext_resource type="LabelSettings" uid="uid://c6fal5c8hx0x3" path="res://Assets/Fonts/Button themes/start_button.tres" id="4_isf6a"]
+
+[node name="Home button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 461.0
+offset_top = 295.0
+offset_right = -1.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eppnf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_3xqhr")
+texture_hover = ExtResource("3_yxep6")
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureButton"]
+layout_mode = 2
+offset_left = 44.0
+offset_top = 18.0
+offset_right = 240.0
+offset_bottom = 101.0
+text = "Home
+
+"
+label_settings = ExtResource("4_isf6a")
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

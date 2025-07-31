@@ -64,40 +64,43 @@ offset_top = 255.0
 offset_right = 457.0
 offset_bottom = 255.0
 
-[node name="Sounds" type="OptionButton" parent="."]
-layout_mode = 0
-offset_left = 491.0
-offset_top = 487.0
-offset_right = 663.0
-offset_bottom = 533.0
+[node name="Quit_button" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TextureButton" type="TextureButton" parent="Sounds"]
+[node name="quit_button" type="TextureButton" parent="Quit_button"]
 layout_mode = 0
-offset_left = -17.0
-offset_top = -21.0
-offset_right = 179.0
-offset_bottom = 63.0
+offset_left = 474.0
+offset_top = 466.0
+offset_right = 670.0
+offset_bottom = 550.0
 texture_normal = ExtResource("4_5e717")
 texture_hover = ExtResource("5_nqnrp")
 
-[node name="Label" type="Label" parent="Sounds"]
-layout_mode = 0
-offset_left = 13.0
-offset_top = -5.0
-offset_right = 213.0
-offset_bottom = 80.0
-text = "Sounds
+[node name="Label3" type="Label" parent="Quit_button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = 484.0
+offset_right = 575.0
+offset_bottom = 527.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit
 "
 label_settings = ExtResource("6_5a7ho")
 
-[node name="Menu_button" type="Button" parent="."]
-layout_mode = 0
+[node name="MENU_BUTTON" type="Control" parent="."]
+anchors_preset = 0
 offset_left = 504.0
 offset_top = 372.0
-offset_right = 642.0
-offset_bottom = 421.0
+offset_right = 544.0
+offset_bottom = 412.0
 
-[node name="TextureButton2" type="TextureButton" parent="Menu_button"]
+[node name="TextureButton2" type="TextureButton" parent="MENU_BUTTON"]
 layout_mode = 0
 offset_left = -28.0
 offset_top = -11.0
@@ -106,7 +109,7 @@ offset_bottom = 73.0
 texture_normal = ExtResource("4_5e717")
 texture_hover = ExtResource("5_nqnrp")
 
-[node name="Label3" type="Label" parent="Menu_button"]
+[node name="Label3" type="Label" parent="MENU_BUTTON"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 6.0
@@ -114,3 +117,6 @@ offset_right = 216.0
 offset_bottom = 91.0
 text = "Menu"
 label_settings = ExtResource("6_5a7ho")
+
+[connection signal="pressed" from="Quit_button/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MENU_BUTTON/TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://btwv0q2vkvoaa"]
 
+[ext_resource type="Script" uid="uid://dmji18hwqotcn" path="res://start_button.gd" id="1_4gr3n"]
 [ext_resource type="Texture2D" uid="uid://bmjumeelpgcem" path="res://Assets/User Interface/Button/Rect/Fill/Default.png" id="1_jmjxx"]
 [ext_resource type="Texture2D" uid="uid://dr1sd5yk6k1wc" path="res://Assets/User Interface/Button/Rect/Fill/Hover.png" id="1_tqs16"]
-[ext_resource type="Script" uid="uid://bd3asss0mvkq2" path="res://Start_button.gd" id="3_4gr3n"]
 [ext_resource type="LabelSettings" uid="uid://c6fal5c8hx0x3" path="res://Assets/Fonts/Button themes/start_button.tres" id="3_jmjxx"]
 
 [node name="Start button" type="Control"]
@@ -14,16 +14,16 @@ offset_top = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4gr3n")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Start_button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_jmjxx")
 texture_hover = ExtResource("1_tqs16")
-script = ExtResource("3_4gr3n")
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label" type="Label" parent="Start_button"]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 15.0
@@ -33,4 +33,4 @@ text = "Start
 "
 label_settings = ExtResource("3_jmjxx")
 
-[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Start_button" to="." method="_on_texture_button_pressed"]
