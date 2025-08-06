@@ -5,6 +5,11 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY=-200
 const SPEED= 250
 
+#func die():
+	#animated_sprite.play("Death")
+	#get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+	
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -42,6 +47,11 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("Run")
 	else:
 		animated_sprite.play("Idle")
+		
+	#if global_position.y>100:
+		#die()
+
+
 
 
 	move_and_slide()
