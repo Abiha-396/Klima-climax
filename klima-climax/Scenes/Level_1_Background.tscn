@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmpxh41yj02v7"]
+[gd_scene load_steps=3 format=3 uid="uid://cmpxh41yj02v7"]
 
 [ext_resource type="Texture2D" uid="uid://cle0kmb3xcxxc" path="res://Assets/Backgrounds/nature_2/origbig.png" id="1_tmrg5"]
+[ext_resource type="PackedScene" uid="uid://c7l3ge4bdsw7p" path="res://Scenes/buttons.tscn" id="2_iv51h"]
 
 [node name="Level_1_background" type="Control"]
 layout_mode = 3
@@ -19,3 +20,9 @@ offset_top = -7.0
 offset_right = 1162.0
 offset_bottom = 654.0
 texture = ExtResource("1_tmrg5")
+
+[node name="Buttons" parent="CanvasLayer" instance=ExtResource("2_iv51h")]
+offset_left = -77.0
+offset_top = 7.0
+offset_right = -77.0
+offset_bottom = 7.0

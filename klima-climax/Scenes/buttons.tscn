@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7l3ge4bdsw7p"]
+
+[ext_resource type="Texture2D" uid="uid://ceibh1cvs7ulq" path="res://Assets/User Interface/Buttons/Square/Home/Default.png" id="1_2y0rg"]
+[ext_resource type="Script" uid="uid://cj4o3y5fc0ylk" path="res://Scripts/buttons.gd" id="1_yh7w3"]
+[ext_resource type="Texture2D" uid="uid://6ff1v547f1ks" path="res://Assets/User Interface/Buttons/Square/Home/Hover.png" id="2_yh7w3"]
+[ext_resource type="Texture2D" uid="uid://dkupyytghq7nv" path="res://Assets/User Interface/Buttons/Square/Repeat/Default.png" id="3_2hqns"]
+[ext_resource type="Texture2D" uid="uid://dp603e4gqv2bf" path="res://Assets/User Interface/Buttons/Square/Repeat/Hover.png" id="4_r3kxo"]
+[ext_resource type="Texture2D" uid="uid://2neayq3y8u8q" path="res://Assets/User Interface/Buttons/Square/SoundOn/Default.png" id="5_y5w6w"]
+[ext_resource type="Texture2D" uid="uid://dem2awjhqidej" path="res://Assets/User Interface/Buttons/Square/SoundOff/Default.png" id="6_ljimj"]
+[ext_resource type="Texture2D" uid="uid://dpe3e0ff4h6ix" path="res://Assets/User Interface/Buttons/Square/SoundOff/Hover.png" id="7_b2qy2"]
+
+[node name="Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yh7w3")
+
+[node name="Home Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 1.0
+offset_right = 404.0
+offset_bottom = 85.0
+texture_normal = ExtResource("1_2y0rg")
+texture_hover = ExtResource("2_yh7w3")
+ignore_texture_size = true
+
+[node name="Restart Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_right = 307.0
+offset_bottom = 84.0
+texture_normal = ExtResource("3_2hqns")
+texture_hover = ExtResource("4_r3kxo")
+ignore_texture_size = true
+
+[node name="Sound button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 3.0
+offset_right = 201.0
+offset_bottom = 87.0
+texture_normal = ExtResource("5_y5w6w")
+texture_pressed = ExtResource("6_ljimj")
+texture_hover = ExtResource("7_b2qy2")
+ignore_texture_size = true
+stretch_mode = 3
+
+[connection signal="pressed" from="Home Button" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Restart Button" to="." method="_on_restart_button_pressed"]
