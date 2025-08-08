@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dd14vbmwoixik"]
+[gd_scene load_steps=5 format=3 uid="uid://dd14vbmwoixik"]
+
+[ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_f1kxn"]
+[ext_resource type="LabelSettings" uid="uid://c5kia2j4rjbg8" path="res://Assets/Fonts/Button themes/Title_smalle.tres" id="2_f1kxn"]
+[ext_resource type="LabelSettings" uid="uid://cvyg5wdkoyaac" path="res://Assets/Fonts/Button themes/Menu text.tres" id="3_4s2ig"]
+[ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/home_button.tscn" id="4_vrhsl"]
 
 [node name="Menu_screen" type="Control"]
 layout_mode = 3
@@ -8,7 +13,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.912289, 0.912289, 0.912289, 1)
 layout_mode = 0
 offset_right = 1156.0
 offset_bottom = 648.0
+texture = ExtResource("1_f1kxn")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 50.0
+offset_right = 770.0
+offset_bottom = 200.0
+text = "Menu"
+label_settings = ExtResource("2_f1kxn")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 169.0
+offset_right = 987.0
+offset_bottom = 639.0
+text = "Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+Hi this is just a placeholder
+
+"
+label_settings = ExtResource("3_4s2ig")
+
+[node name="Home button" parent="." instance=ExtResource("4_vrhsl")]
+layout_mode = 1
+offset_left = 916.0
+offset_top = 501.0
+offset_right = 454.0
+offset_bottom = 187.0
