@@ -14,7 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.912289, 0.912289, 0.912289, 1)
 layout_mode = 0
 offset_right = 1156.0
 offset_bottom = 648.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bm0uqcmo7eo3u"]
+[gd_scene load_steps=90 format=3 uid="uid://bm0uqcmo7eo3u"]
 
 [ext_resource type="Script" uid="uid://ntwyk6fbfl0e" path="res://Scripts/player_elf_real.gd" id="1_o2kaw"]
 [ext_resource type="Texture2D" uid="uid://bu3gsftc5etdd" path="res://Assets/Sprites/Elf/death/death_1.png" id="2_o2kaw"]
@@ -417,18 +417,22 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o2kaw"]
 radius = 8.0
-height = 44.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2c5bh"]
+radius = 5.0
+height = 32.0
 
 [node name="Elf" type="CharacterBody2D"]
+position = Vector2(83, 42)
 script = ExtResource("1_o2kaw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(532, 249.5)
-scale = Vector2(1, 1.00781)
+position = Vector2(532, 249)
+scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Run_back"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.265715
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(532, 292)
@@ -437,3 +441,8 @@ shape = SubResource("CapsuleShape2D_o2kaw")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(539, 278)
 zoom = Vector2(2, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(532, 307)
+rotation = 1.58836
+shape = SubResource("CapsuleShape2D_2c5bh")
