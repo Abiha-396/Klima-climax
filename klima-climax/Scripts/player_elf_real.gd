@@ -22,8 +22,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y= 2*JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var is_running_right := false
+	
 	
 	var direction := Input.get_axis("Move_left", "Move_right")
 	if direction:
@@ -58,5 +57,11 @@ func _physics_process(delta: float) -> void:
 
 
 
-
 	move_and_slide()
+
+signal died
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	emit_signal("died")
+	get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+	
