@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://h54c2qukaf3y"]
+
+[ext_resource type="Texture2D" uid="uid://vwsg20d7nrod" path="res://Assets/Backgrounds/nature_8/origbig.png" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://c7l3ge4bdsw7p" path="res://Scenes/buttons.tscn" id="2_smnlx"]
+
+[node name="Level 2" type="Node2D"]
+visible = false
+
+[node name="Background" type="Control" parent="."]
+z_index = -10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Background"]
+
+[node name="TextureRect" type="TextureRect" parent="Background/CanvasLayer"]
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 1163.0
+offset_bottom = 664.0
+texture = ExtResource("1_v3rpw")
+expand_mode = 1
+
+[node name="Buttons" parent="Background/CanvasLayer" instance=ExtResource("2_smnlx")]
+offset_left = -72.0
+offset_top = 16.0
+offset_right = -68.0
+offset_bottom = 16.0

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://be6n1eokhaxo0"]
+
+[ext_resource type="Texture2D" uid="uid://basx3x3rv5et" path="res://Assets/User Interface/Star/Unactive.png" id="1_kn7si"]
+[ext_resource type="Texture2D" uid="uid://bxdao5nph468v" path="res://Assets/User Interface/Star/Active.png" id="2_18cdb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6444e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kn7si")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_18cdb")
+}],
+"loop": true,
+"name": &"Win",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_lsmp6"]
+script/source = "extends AnimatedSprite2D
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrdnt"]
+radius = 30.6358
+
+[node name="Trophy" type="AnimatedSprite2D"]
+z_index = -3
+scale = Vector2(0.364942, 0.364942)
+sprite_frames = SubResource("SpriteFrames_6444e")
+animation = &"Idle"
+offset = Vector2(-1000, 0)
+script = SubResource("GDScript_lsmp6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-997.307, 0.342503)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.7403, 2.74017)
+shape = SubResource("CircleShape2D_xrdnt")

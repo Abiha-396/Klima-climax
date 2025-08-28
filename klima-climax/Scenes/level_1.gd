@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	trophy.play("Win")
 	await get_tree().create_timer(0.75).timeout
-	get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_2_platform.tscn")
