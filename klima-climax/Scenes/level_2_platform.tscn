@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://1lgfqx3ey7m2"]
+[gd_scene load_steps=7 format=3 uid="uid://1lgfqx3ey7m2"]
 
 [ext_resource type="Texture2D" uid="uid://ivnir165xun" path="res://Assets/Platform/Level 1.png" id="1_otnb7"]
 [ext_resource type="PackedScene" uid="uid://bm0uqcmo7eo3u" path="res://Scenes/player_elf.tscn" id="2_cunnp"]
 [ext_resource type="Texture2D" uid="uid://vwsg20d7nrod" path="res://Assets/Backgrounds/nature_8/origbig.png" id="3_mubnb"]
+[ext_resource type="PackedScene" uid="uid://c7l3ge4bdsw7p" path="res://Scenes/buttons.tscn" id="4_k2r8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cunnp"]
 texture = ExtResource("1_otnb7")
@@ -164,3 +165,10 @@ offset_right = 1157.0
 offset_bottom = 653.0
 texture = ExtResource("3_mubnb")
 expand_mode = 1
+
+[node name="Buttons" parent="CanvasLayer" instance=ExtResource("4_k2r8l")]
+z_index = 10
+offset_left = -76.0
+offset_top = 14.0
+offset_right = -72.0
+offset_bottom = 14.0
