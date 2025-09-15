@@ -1,5 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bca5neert7fky"]
 
+[ext_resource type="Script" uid="uid://3dowc1qn7l8e" path="res://Scripts/Trophy.gd" id="1_18cdb"]
 [ext_resource type="Texture2D" uid="uid://basx3x3rv5et" path="res://Assets/User Interface/Star/Unactive.png" id="1_kn7si"]
 [ext_resource type="Texture2D" uid="uid://bxdao5nph468v" path="res://Assets/User Interface/Star/Active.png" id="2_18cdb"]
 
@@ -22,24 +23,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_lsmp6"]
-script/source = "extends AnimatedSprite2D
-"
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrdnt"]
 radius = 30.6358
 
-[node name="Trophy2" type="AnimatedSprite2D"]
+[node name="Trophy" type="Node2D"]
+position = Vector2(180, 299)
+script = ExtResource("1_18cdb")
+
+[node name="Trophy2" type="AnimatedSprite2D" parent="."]
 z_index = -3
-scale = Vector2(0.364942, 0.364942)
+position = Vector2(997.699, 97.5)
+scale = Vector2(0.747126, 0.747127)
 sprite_frames = SubResource("SpriteFrames_6444e")
-animation = &"Idle"
+animation = &"Win"
+autoplay = "Idle"
 offset = Vector2(-1000, 0)
-script = SubResource("GDScript_lsmp6")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-997.307, 0.342503)
+[node name="Area2D" type="Area2D" parent="Trophy2"]
+position = Vector2(-1000.53, -3.8011)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.7403, 2.74017)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trophy2/Area2D"]
+position = Vector2(6.03199e-05, 6.75728)
 shape = SubResource("CircleShape2D_xrdnt")
+
+[connection signal="body_entered" from="Trophy2/Area2D" to="." method="_on_area_2d_body_entered"]

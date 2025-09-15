@@ -22,7 +22,7 @@ offset_bottom = 654.0
 texture = ExtResource("1_tmrg5")
 
 [node name="Buttons" parent="CanvasLayer" instance=ExtResource("2_iv51h")]
-offset_left = -95.0
-offset_top = 18.0
-offset_right = -95.0
-offset_bottom = 18.0
+offset_left = -90.0
+offset_top = 16.0
+offset_right = -90.0
+offset_bottom = 16.0
