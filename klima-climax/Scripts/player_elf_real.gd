@@ -62,6 +62,7 @@ func _physics_process(delta: float) -> void:
 signal died
 
 func _on_killzone_body_entered(body: Node2D) -> void:
+	await get_tree().create_timer(0.05).timeout
 	emit_signal("died")
-	get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/end_screen_lost.tscn")
 	
