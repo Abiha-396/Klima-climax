@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwp65wh8bpd"]
 
-[ext_resource type="Script" uid="uid://ckpvg3pejswgk" path="res://mushy_mushroom.gd" id="1_7l26p"]
+[ext_resource type="Script" uid="uid://ckpvg3pejswgk" path="res://Scripts/mushy_mushroom.gd" id="1_7l26p"]
 [ext_resource type="Texture2D" uid="uid://ivnir165xun" path="res://Assets/Platform/Level 1.png" id="1_37vqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cio7"]
