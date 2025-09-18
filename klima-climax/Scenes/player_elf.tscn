@@ -196,6 +196,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("52_osqeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_osqeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_osqeb")
 }],
 "loop": true,
 "name": &"Fall",
@@ -431,8 +437,9 @@ script = ExtResource("1_o2kaw")
 position = Vector2(532, 249)
 scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Idle"
+animation = &"Fall"
 autoplay = "Idle"
+frame_progress = 0.912637
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(532, 292)

@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("Jump")
 		else:
 			animated_sprite.play("Fall")
+			
 	elif direction > 0:
 		animated_sprite.play("Run")
 	elif direction < 0:
