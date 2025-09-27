@@ -8,7 +8,7 @@ const SPEED= 250
 #func die():
 	#animated_sprite.play("Death")
 	#get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
-	
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -38,21 +38,41 @@ func _physics_process(delta: float) -> void:
 			
 	if Input.is_action_pressed("Roll"):
 		velocity.y= -JUMP_VELOCITY
+		
+	if Input.is_action_pressed("Shoot"):
+		animated_sprite.play("sp_attack")
 	
 	# Animation logic
+	animated_sprite.flip_h=false
 	if not is_on_floor():
 		if velocity.y < 0:
-			animated_sprite.play("Jump")
+			if direction > 0:
+				animated_sprite.play("Jump")
+			else:
+				animated_sprite.flip_h =true
+				animated_sprite.play("Jump")
 		else:
-			animated_sprite.play("Fall")
+			if direction > 0:
+				animated_sprite.play("Fall")
+			else:
+				animated_sprite.flip_h =true
+				animated_sprite.play("Fall")
 			
 	elif direction > 0:
-		animated_sprite.play("Run")
-	elif direction < 0:
-		animated_sprite.play("Run_back")
-	else:
 		animated_sprite.play("Idle")
+	elif direction < 0:
+		#animated_sprite.play("Run_back")
+		animated_sprite.flip_h =true
+	else:
+		if Input.is_action_just_pressed("Move_right") and is_on_floor():
+			animated_sprite.play("Idle")
+		else:
+			animated_sprite.flip_h =true
+			animated_sprite.play("Idle")
+			animated_sprite.flip_h =false
 		
+		
+	
 	#if global_position.y>100:
 		#die()
 
@@ -65,5 +85,5 @@ signal died
 func _on_killzone_body_entered(body: Node2D) -> void:
 	await get_tree().create_timer(0.05).timeout
 	emit_signal("died")
-	get_tree().change_scene_to_file("res://Scenes/end_screen_lost.tscn")
+	get_tree().reload_current_scene()
 	

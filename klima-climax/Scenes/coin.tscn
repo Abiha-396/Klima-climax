@@ -108,6 +108,7 @@ script = ExtResource("1_jgi06")
 position = Vector2(49.5, 46.5)
 scale = Vector2(1.8125, 1.8125)
 sprite_frames = SubResource("SpriteFrames_wm60r")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(50, 46)

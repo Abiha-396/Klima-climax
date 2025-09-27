@@ -302,39 +302,32 @@ rotation = 0.261799
 
 [node name="Coin36" parent="." instance=ExtResource("7_rynwj")]
 position = Vector2(1325, 549)
-rotation = 0.261799
+rotation = -0.0122474
 
 [node name="Coin37" parent="." instance=ExtResource("7_rynwj")]
 position = Vector2(1390, 533)
-rotation = 0.261799
+rotation = 0.0586442
 
 [node name="Coin38" parent="." instance=ExtResource("7_rynwj")]
-position = Vector2(1478, 506)
-rotation = 0.261799
+position = Vector2(1481, 506)
 
 [node name="Coin39" parent="." instance=ExtResource("7_rynwj")]
 position = Vector2(1530, 517)
-rotation = -0.540685
 
 [node name="Coin40" parent="." instance=ExtResource("7_rynwj")]
 position = Vector2(1530, 517)
-rotation = -1.0472
 
 [node name="Coin41" parent="." instance=ExtResource("7_rynwj")]
-position = Vector2(1631, 502)
-rotation = -1.0472
+position = Vector2(1619, 448)
 
 [node name="Coin42" parent="." instance=ExtResource("7_rynwj")]
-position = Vector2(1702, 434)
-rotation = -1.0472
+position = Vector2(1679, 415)
 
 [node name="Coin43" parent="." instance=ExtResource("7_rynwj")]
-position = Vector2(1771, 382)
-rotation = -1.0472
+position = Vector2(1748, 369)
 
 [node name="Coin44" parent="." instance=ExtResource("7_rynwj")]
-position = Vector2(1811, 322)
-rotation = -1.0472
+position = Vector2(1811, 260)
 
 [node name="Coin45" parent="." instance=ExtResource("7_rynwj")]
 position = Vector2(1988, 290)

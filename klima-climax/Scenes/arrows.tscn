@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://cof0l28nxegro"]
+
+[ext_resource type="PackedScene" uid="uid://bm0uqcmo7eo3u" path="res://Scenes/player_elf.tscn" id="1_asyg8"]
+[ext_resource type="Texture2D" uid="uid://drgewnoowohcv" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow/arrow_.png" id="2_v3osf"]
+[ext_resource type="Texture2D" uid="uid://ilnjlvton7sh" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_1.png" id="3_m8pjx"]
+[ext_resource type="Texture2D" uid="uid://dnu1yueikc2n3" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_2.png" id="4_1f4tr"]
+[ext_resource type="Texture2D" uid="uid://odsxhyt7tsj8" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_3.png" id="5_4x2ej"]
+[ext_resource type="Texture2D" uid="uid://8lu2exx3itxh" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_4.png" id="6_p7o4o"]
+[ext_resource type="Texture2D" uid="uid://dw2nk6xxq0ek5" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_5.png" id="7_35brs"]
+[ext_resource type="Texture2D" uid="uid://mg4q5wufd7lp" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_6.png" id="8_y7d08"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4878"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v3osf")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m8pjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1f4tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4x2ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p7o4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_35brs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y7d08")
+}],
+"loop": true,
+"name": &"arrow_hit",
+"speed": 5.0
+}]
+
+[node name="Arrows" type="Node2D"]
+
+[node name="Elf" parent="." instance=ExtResource("1_asyg8")]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Elf"]
+position = Vector2(582, 290)
+sprite_frames = SubResource("SpriteFrames_p4878")
+animation = &"arrow"
+frame_progress = 0.505931
