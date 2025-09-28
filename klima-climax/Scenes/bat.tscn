@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://2jxay3aa14a5"]
+[gd_scene load_steps=13 format=3 uid="uid://2jxay3aa14a5"]
 
 [ext_resource type="Texture2D" uid="uid://5wrjnp3ncubk" path="res://Assets/Sprites/Bat/Blue_Flying.png" id="1_j7be8"]
 [ext_resource type="Script" uid="uid://xjilvilyud6n" path="res://bat.gd" id="1_jckqh"]
+[ext_resource type="Script" uid="uid://2r46i2cpkcm7" path="res://Scripts/bat_itself.gd" id="2_wt6c1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j7be8"]
 radius = 6.0
@@ -60,9 +61,12 @@ animations = [{
 radius = 7.0
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(224, 180)
 script = ExtResource("1_jckqh")
 
 [node name="Bat" type="CharacterBody2D" parent="."]
+motion_mode = 1
+script = ExtResource("2_wt6c1")
 
 [node name="Area2D" type="Area2D" parent="Bat"]
 
@@ -76,3 +80,9 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bat"]
 shape = SubResource("CircleShape2D_h8o1q")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
