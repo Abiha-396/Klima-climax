@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6ea73sdexrf6"]
+[gd_scene load_steps=18 format=3 uid="uid://b6ea73sdexrf6"]
 
 [ext_resource type="Texture2D" uid="uid://v8k018t66e5d" path="res://Assets/Backgrounds/nature_6/2.png" id="1_ng0s0"]
 [ext_resource type="PackedScene" uid="uid://c7l3ge4bdsw7p" path="res://Scenes/buttons.tscn" id="2_76ybr"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ivnir165xun" path="res://Assets/Platform/Level 1.png" id="6_53xsp"]
 [ext_resource type="PackedScene" uid="uid://bca5neert7fky" path="res://Scenes/trophy.tscn" id="7_5e78q"]
 [ext_resource type="PackedScene" uid="uid://cppj2mjurxxme" path="res://Scenes/killzone.tscn" id="8_5e78q"]
-[ext_resource type="PackedScene" uid="uid://blxjfb16on8o5" path="res://Scenes/game.tscn" id="9_l4wr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf6rc"]
 atlas = ExtResource("4_vwg62")
@@ -188,7 +187,7 @@ pattern_2 = SubResource("TileMapPattern_5e78q")
 [node name="Level 3" type="Node2D"]
 
 [node name="Background" type="Control" parent="."]
-z_index = -4
+z_index = -10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1155.0
@@ -204,12 +203,6 @@ offset_right = 1188.0
 offset_bottom = 663.0
 texture = ExtResource("1_ng0s0")
 expand_mode = 1
-
-[node name="Buttons" parent="Background/CanvasLayer" instance=ExtResource("2_76ybr")]
-offset_left = -95.0
-offset_top = 17.0
-offset_right = -91.0
-offset_bottom = 17.0
 
 [node name="Elf" parent="." instance=ExtResource("3_s8nj6")]
 position = Vector2(-488, 192)
@@ -241,7 +234,7 @@ shape = SubResource("CapsuleShape2D_l4wr6")
 position = Vector2(3241, 76)
 
 [node name="TileMap" type="TileMap" parent="."]
-z_index = -6
+z_index = -4
 position = Vector2(0, -5)
 tile_set = SubResource("TileSet_c81s1")
 format = 2
@@ -257,7 +250,13 @@ position = Vector2(-1935, 8)
 position = Vector2(-2599, 697)
 rotation = -1.56191
 
-[node name="Game" parent="." instance=ExtResource("9_l4wr6")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Buttons" parent="CanvasLayer" instance=ExtResource("2_76ybr")]
+offset_left = -89.0
+offset_top = 16.0
+offset_right = -85.0
+offset_bottom = 16.0
 
 [connection signal="body_entered" from="Elf/Area2D" to="Bat" method="_on_area_2d_body_entered"]
-[connection signal="elf_hit" from="Bat" to="Game" method="_on_bat_elf_hit"]

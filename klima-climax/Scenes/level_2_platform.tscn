@@ -173,13 +173,6 @@ offset_bottom = 656.0
 texture = ExtResource("3_mubnb")
 expand_mode = 1
 
-[node name="Buttons" parent="CanvasLayer" instance=ExtResource("4_k2r8l")]
-z_index = 10
-offset_left = -101.0
-offset_top = 14.0
-offset_right = -97.0
-offset_bottom = 14.0
-
 [node name="Trophy" parent="." instance=ExtResource("5_k2r8l")]
 position = Vector2(1471, 226)
 scale = Vector2(0.441811, 0.441811)
@@ -419,3 +412,8 @@ rotation = 1.30878
 
 [node name="Coin11" parent="." instance=ExtResource("7_rynwj")]
 position = Vector2(334, 357)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Buttons" parent="CanvasLayer2" instance=ExtResource("4_k2r8l")]

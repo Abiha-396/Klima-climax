@@ -3,13 +3,14 @@ extends Node
 var score =0
 var life: int = 3
 
-func _ready() -> void:
+
+func _ready():
 	pass
-
+	
+func _process(delta):
+	if life<1:
+		get_tree().change_scene_to_file("res://Scenes/end_screen_lost.tscn")
+		
+		
 
 	
-	
-func _on_bat_elf_hit():
-	life-=1
-	print(life)
-	get_tree().reload_current_scene()

@@ -61,6 +61,7 @@ animations = [{
 radius = 7.0
 
 [node name="Node2D" type="Node2D"]
+light_mask = 2
 position = Vector2(224, 180)
 script = ExtResource("1_jckqh")
 
@@ -82,7 +83,7 @@ autoplay = "default"
 shape = SubResource("CircleShape2D_h8o1q")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

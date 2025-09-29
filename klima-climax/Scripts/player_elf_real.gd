@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var Bat= $RayCast2D
 @export	var gravity =400
 @export var JUMP_VELOCITY=-200
 const SPEED= 250
@@ -9,6 +10,10 @@ const SPEED= 250
 	#animated_sprite.play("Death")
 	#get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 
+func _process(delta):
+	if Bat.is_colliding():
+		var bat = Bat.get_collider()
+		print(bat)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -42,6 +47,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Shoot"):
 		animated_sprite.play("sp_attack")
 	
+	if GlobalScript.life<3:
+		animated_sprite.play("Death")
 	# Animation logic
 	animated_sprite.flip_h=false
 	if not is_on_floor():
@@ -80,10 +87,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-signal died
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	await get_tree().create_timer(0.05).timeout
-	emit_signal("died")
 	get_tree().reload_current_scene()
+	
+
+
+
 	

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dpe3e0ff4h6ix" path="res://Assets/User Interface/Buttons/Square/SoundOff/Hover.png" id="7_b2qy2"]
 
 [node name="Buttons" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,30 +21,35 @@ grow_vertical = 2
 script = ExtResource("1_yh7w3")
 
 [node name="Home Button" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 331.0
-offset_top = 1.0
-offset_right = 415.0
-offset_bottom = 85.0
+offset_left = 297.0
+offset_top = 2.0
+offset_right = 381.0
+offset_bottom = 86.0
 texture_normal = ExtResource("1_2y0rg")
 texture_hover = ExtResource("2_yh7w3")
 ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Restart Button" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 223.0
-offset_right = 307.0
-offset_bottom = 84.0
+offset_left = 201.0
+offset_top = 2.0
+offset_right = 285.0
+offset_bottom = 86.0
 texture_normal = ExtResource("3_2hqns")
 texture_hover = ExtResource("4_r3kxo")
 ignore_texture_size = true
 
 [node name="Sound button" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 117.0
-offset_top = 3.0
-offset_right = 201.0
-offset_bottom = 87.0
+offset_left = 105.0
+offset_top = 1.0
+offset_right = 189.0
+offset_bottom = 85.0
 texture_normal = ExtResource("5_y5w6w")
 texture_pressed = ExtResource("6_ljimj")
 texture_hover = ExtResource("7_b2qy2")

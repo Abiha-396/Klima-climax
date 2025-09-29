@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cof0l28nxegro"]
+[gd_scene load_steps=12 format=3 uid="uid://cof0l28nxegro"]
 
-[ext_resource type="PackedScene" uid="uid://bm0uqcmo7eo3u" path="res://Scenes/player_elf.tscn" id="1_asyg8"]
+[ext_resource type="Script" uid="uid://cjpqsixvybco5" path="res://Scripts/arrows.gd" id="1_asyg8"]
 [ext_resource type="Texture2D" uid="uid://drgewnoowohcv" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow/arrow_.png" id="2_v3osf"]
 [ext_resource type="Texture2D" uid="uid://ilnjlvton7sh" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_1.png" id="3_m8pjx"]
 [ext_resource type="Texture2D" uid="uid://dnu1yueikc2n3" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_2.png" id="4_1f4tr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://8lu2exx3itxh" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_4.png" id="6_p7o4o"]
 [ext_resource type="Texture2D" uid="uid://dw2nk6xxq0ek5" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_5.png" id="7_35brs"]
 [ext_resource type="Texture2D" uid="uid://mg4q5wufd7lp" path="res://Assets/Sprites/Elf/projectiles_and_effects/arrow_hit/arrow_hit_6.png" id="8_y7d08"]
+[ext_resource type="Texture2D" uid="uid://dn6mva7yygpwv" path="res://icon.svg" id="9_v3osf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p4878"]
 animations = [{
@@ -43,12 +44,30 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Arrows" type="Node2D"]
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_v3osf"]
+length = 32.0001
 
-[node name="Elf" parent="." instance=ExtResource("1_asyg8")]
+[node name="Arrow" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_asyg8")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Elf"]
-position = Vector2(582, 290)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(678, 333)
 sprite_frames = SubResource("SpriteFrames_p4878")
 animation = &"arrow"
 frame_progress = 0.505931
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(663, 333)
+rotation = -1.57202
+scale = Vector2(1, 1)
+shape = SubResource("SeparationRayShape2D_v3osf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_v3osf")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(10, 50)
+collision_mask = 2
