@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ba14qqnd7uypv"]
+
+[sub_resource type="FontVariation" id="FontVariation_l1tnp"]
+
+[resource]
+font = SubResource("FontVariation_l1tnp")
+font_size = 50
+font_color = Color(0.905316, 0.799382, 0.523419, 1)
+outline_size = 3
+outline_color = Color(0.211659, 0.154206, 0.135666, 1)

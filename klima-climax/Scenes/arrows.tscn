@@ -60,7 +60,6 @@ frame_progress = 0.505931
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(663, 333)
 rotation = -1.57202
-scale = Vector2(1, 1)
 shape = SubResource("SeparationRayShape2D_v3osf")
 
 [node name="TextureRect" type="TextureRect" parent="."]

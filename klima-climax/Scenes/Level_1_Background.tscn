@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmpxh41yj02v7"]
+[gd_scene load_steps=4 format=3 uid="uid://cmpxh41yj02v7"]
 
 [ext_resource type="Texture2D" uid="uid://cle0kmb3xcxxc" path="res://Assets/Backgrounds/nature_2/origbig.png" id="1_tmrg5"]
 [ext_resource type="PackedScene" uid="uid://c7l3ge4bdsw7p" path="res://Scenes/buttons.tscn" id="2_iv51h"]
+[ext_resource type="PackedScene" uid="uid://2ttlkwap7hxc" path="res://Scenes/coins_label.tscn" id="3_dtmol"]
 
 [node name="Level_1_background" type="Control"]
 layout_mode = 3
@@ -28,3 +29,9 @@ offset_left = -92.0
 offset_top = 11.0
 offset_right = -88.0
 offset_bottom = 11.0
+
+[node name="Coins_label" parent="CanvasLayer2" instance=ExtResource("3_dtmol")]
+offset_left = 958.0
+offset_top = 17.0
+offset_right = 958.0
+offset_bottom = 17.0

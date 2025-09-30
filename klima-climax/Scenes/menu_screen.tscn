@@ -1,11 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd14vbmwoixik"]
+[gd_scene load_steps=11 format=3 uid="uid://dd14vbmwoixik"]
 
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_f1kxn"]
 [ext_resource type="LabelSettings" uid="uid://c5kia2j4rjbg8" path="res://Assets/Fonts/Button themes/Title_smalle.tres" id="2_f1kxn"]
 [ext_resource type="LabelSettings" uid="uid://cvyg5wdkoyaac" path="res://Assets/Fonts/Button themes/Menu text.tres" id="3_4s2ig"]
 [ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/home_button.tscn" id="4_vrhsl"]
 
-[sub_resource type="Theme" id="Theme_vrhsl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrhsl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvdu7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kt8v0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53ued"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ome7q"]
+
+[sub_resource type="Theme" id="Theme_qj8sk"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_vrhsl")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_wvdu7")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_kt8v0")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_53ued")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_ome7q")
 
 [node name="Menu_screen" type="Control"]
 layout_mode = 3
@@ -15,57 +30,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 648.0
-texture = ExtResource("1_f1kxn")
-expand_mode = 1
-
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 363.0
-offset_top = 50.0
+offset_top = 25.0
 offset_right = 770.0
-offset_bottom = 200.0
+offset_bottom = 175.0
 text = "Menu"
 label_settings = ExtResource("2_f1kxn")
 
-[node name="Text" type="Label" parent="."]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 63.0
-offset_right = 6254.0
-offset_bottom = 636.0
-text = "Narrative:
-
-When the shadows had sunken and the 
-lush green forests withered, there rose
- a mighty hero, determined to save the 
-world. The elf, once imbued with nature’s 
-powers, is lost in a terrain where survival 
-comes at a cost. Are you ready to pay the
- price and get the most out of this 
-adventure, or did the fear of dying
- at the hands of stinky smoke and 
-plastic monsters get the best out of you?"
-label_settings = ExtResource("3_4s2ig")
-
 [node name="Home button" parent="." instance=ExtResource("4_vrhsl")]
 layout_mode = 1
-offset_left = 916.0
-offset_top = 501.0
-offset_right = 454.0
-offset_bottom = 187.0
+offset_left = 918.0
+offset_top = 29.0
+offset_right = 456.0
+offset_bottom = -285.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 1158.0
+offset_bottom = 645.0
+texture = ExtResource("1_f1kxn")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 448.0
-offset_top = -516.0
-offset_right = 1457.0
-offset_bottom = -217.0
-theme = SubResource("Theme_vrhsl")
+offset_left = 53.0
+offset_top = 128.0
+offset_right = 1101.0
+offset_bottom = 629.0
+theme = SubResource("Theme_qj8sk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
 text = "Narrative:
 
-When the shadows had sunken and the lush green forests withered, there rose a mighty hero, determined to save the world. The elf, once imbued with nature’s powers, is lost in a terrain where survival comes at a cost. Are you ready to pay the price and get the most out of this adventure, or did the fear of dying at the hands of stinky smoke and plastic monsters get the best out of you?"
-fit_content = true
+When the shadows had sunken and the lush green forests withered, there rose a mighty hero, determined to save the 
+world. The elf, once imbued with nature’s powers, is lost in a terrain where survival comes at a cost. 
+
+Are you ready to pay the price and get the most out of this adventure, or did the fear of dying at the hands of stinky smoke and plastic monsters get the best out of you?
+
+
+
+How to Play:
+
+Use AWSD or arrow keys to move; and the spacebar for a bigger jump.
+To shoot.....
+Every level has a checkpoint. You won't have to start from the beginning after a simple mistake. But from Level 3 onwards, every hit counts, with the 3rd one marking your defeat.
+Flea......
+
+
+
+
+
+To Win:
+
+You must survive until the every end. Never let your guard down, fight tooth and nail, and stay strong.
+May the odds be ever in you favour!
+
+
+
+                                    					           Credits
+Assets
+Backgrounds
+"
+label_settings = ExtResource("3_4s2ig")
+autowrap_mode = 3

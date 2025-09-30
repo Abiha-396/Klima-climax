@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready():
 	GlobalScript.life
+
 	
 func _on_timer_timeout():
 	var clone = bat.duplicate()

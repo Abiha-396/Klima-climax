@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ttlkwap7hxc"]
+
+[ext_resource type="Script" uid="uid://c44kppr1dhe3g" path="res://Scripts/coins_label.gd" id="1_q2mf6"]
+[ext_resource type="LabelSettings" uid="uid://ba14qqnd7uypv" path="res://Assets/Fonts/Button themes/score_counter .tres" id="2_5oih3"]
+[ext_resource type="Texture2D" uid="uid://euhsljvimdcr" path="res://Assets/User Interface/Counter/Dummy.png" id="3_3yscy"]
+[ext_resource type="Texture2D" uid="uid://1n8fpodelvra" path="res://Assets/Platform/coin.1.png" id="4_3yscy"]
+
+[node name="Coins_label" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q2mf6")
+
+[node name="Label" type="Label" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 39.0
+offset_top = 18.0
+offset_right = 168.0
+offset_bottom = 63.0
+label_settings = ExtResource("2_5oih3")
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 151.0
+offset_bottom = 72.0
+texture_normal = ExtResource("3_3yscy")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -2.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource("4_3yscy")
