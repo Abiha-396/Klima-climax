@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://2jxay3aa14a5"]
 
 [ext_resource type="Texture2D" uid="uid://5wrjnp3ncubk" path="res://Assets/Sprites/Bat/Blue_Flying.png" id="1_j7be8"]
-[ext_resource type="Script" uid="uid://xjilvilyud6n" path="res://bat.gd" id="1_jckqh"]
+[ext_resource type="Script" uid="uid://xjilvilyud6n" path="res://Scripts/bat.gd" id="1_jckqh"]
 [ext_resource type="Script" uid="uid://2r46i2cpkcm7" path="res://Scripts/bat_itself.gd" id="2_wt6c1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j7be8"]

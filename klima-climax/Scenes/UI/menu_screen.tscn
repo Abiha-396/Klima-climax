@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_f1kxn"]
 [ext_resource type="LabelSettings" uid="uid://c5kia2j4rjbg8" path="res://Assets/Fonts/Button themes/Title_smalle.tres" id="2_f1kxn"]
 [ext_resource type="LabelSettings" uid="uid://cvyg5wdkoyaac" path="res://Assets/Fonts/Button themes/Menu text.tres" id="3_4s2ig"]
-[ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/home_button.tscn" id="4_vrhsl"]
+[ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/UI/home_button.tscn" id="4_vrhsl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrhsl"]
 
