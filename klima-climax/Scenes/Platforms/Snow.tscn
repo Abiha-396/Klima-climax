@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ddpxd2jdbyfxq"]
+
+[node name="Snow" type="GPUParticles2D"]
+position = Vector2(571, 12)
+amount = 32
+lifetime = 20.0
+speed_scale = 1.5
+fixed_fps = 20

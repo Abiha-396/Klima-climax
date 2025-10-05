@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6ea73sdexrf6"]
+[gd_scene load_steps=22 format=3 uid="uid://b6ea73sdexrf6"]
 
 [ext_resource type="PackedScene" uid="uid://bm0uqcmo7eo3u" path="res://Scenes/Sprites/player_elf.tscn" id="1_x1k1j"]
 [ext_resource type="Texture2D" uid="uid://bylahl0kj28em" path="res://Assets/Platform/Log.png" id="2_4ahh4"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cppj2mjurxxme" path="res://Scenes/Sprites/killzone.tscn" id="6_md4x4"]
 [ext_resource type="PackedScene" uid="uid://be6sdfjq2e0nq" path="res://Scenes/UI/background_general.tscn" id="7_1hf40"]
 [ext_resource type="Texture2D" uid="uid://v8k018t66e5d" path="res://Assets/Backgrounds/nature_6/2.png" id="8_13yca"]
+[ext_resource type="FontFile" uid="uid://tpiea7ytwroh" path="res://Assets/Fonts/ARTHO-PersonalUse.otf" id="9_4ahh4"]
+[ext_resource type="PackedScene" uid="uid://nbqc0ouptc45" path="res://Scenes/UI/Sounds.tscn" id="10_osqx1"]
+[ext_resource type="AudioStream" uid="uid://bxayw5tdkk14u" path="res://Assets/Sounds/level 3.mp3" id="11_sy7oa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qf6rc"]
 atlas = ExtResource("2_4ahh4")
@@ -184,6 +187,13 @@ pattern_0 = SubResource("TileMapPattern_l4wr6")
 pattern_1 = SubResource("TileMapPattern_5rvg2")
 pattern_2 = SubResource("TileMapPattern_5e78q")
 
+[sub_resource type="LabelSettings" id="LabelSettings_x1k1j"]
+font = ExtResource("9_4ahh4")
+font_size = 20
+font_color = Color(0.462662, 0.779945, 0.994173, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Level 3" type="Node2D"]
 
 [node name="Elf" parent="." instance=ExtResource("1_x1k1j")]
@@ -226,7 +236,7 @@ layer_0/tile_data = PackedInt32Array(2162688, 262144, 9, 2162689, 262144, 9, 216
 position = Vector2(8645, 472)
 
 [node name="Killzone" parent="." instance=ExtResource("6_md4x4")]
-position = Vector2(-1935, 8)
+position = Vector2(2352, 556)
 
 [node name="Killzone2" parent="." instance=ExtResource("6_md4x4")]
 position = Vector2(-2599, 697)
@@ -236,6 +246,17 @@ rotation = -1.56191
 
 [node name="TextureRect" parent="Background_general/CanvasLayer" index="0"]
 texture = ExtResource("8_13yca")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 381.0
+offset_right = 533.0
+offset_bottom = 452.0
+text = "The Falling Shadows"
+label_settings = SubResource("LabelSettings_x1k1j")
+
+[node name="Sounds" parent="." instance=ExtResource("10_osqx1")]
+stream = ExtResource("11_sy7oa")
 
 [connection signal="body_entered" from="Elf/Area2D" to="Bat" method="_on_area_2d_body_entered"]
 

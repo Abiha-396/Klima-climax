@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://nbqc0ouptc45"]
+
+[node name="Sounds" type="AudioStreamPlayer2D"]
+autoplay = true
+bus = &"Music"

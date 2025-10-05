@@ -4,6 +4,10 @@ extends Area2D
 var direction: Vector2
 @export var Ref_bat: PackedScene
 
+
+func _ready():
+	GlobalScript.score
+	
 func _physics_process(delta):
 	# Adjusts the arrow direction 
 	direction= Vector2.RIGHT.rotated(rotation)
@@ -23,6 +27,8 @@ func _on_area_entered(area):
 
 func _on_body_entered(body):
 	print(body)
+	body.queue_free()
+	GlobalScript.score+=1
 	destroy()
 
 

@@ -15,9 +15,14 @@ run/main_scene="uid://caxa2jkldu305"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dyu5ook3tnvy6"
+
 [autoload]
 
 GlobalScript="*res://Scripts/Global script.gd"
+DefaultMusic="*res://Scenes/UI/default_music.tscn"
 
 [display]
 
@@ -25,6 +30,7 @@ window/stretch/mode="canvas_items"
 
 [gui]
 
+common/snap_controls_to_pixels=false
 theme/custom_font="uid://txfcbsmdf1u2"
 
 [input]
