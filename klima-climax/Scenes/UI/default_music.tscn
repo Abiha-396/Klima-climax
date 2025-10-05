@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpq6ybca1xunx"]
 
-[ext_resource type="AudioStream" uid="uid://da02j1hl2ph2l" path="res://Assets/Sounds/retro-gaming-271301.mp3" id="1_40a0v"]
+[ext_resource type="AudioStream" uid="uid://da02j1hl2ph2l" path="res://Assets/Sounds/Background.mp3" id="1_40a0v"]
 
 [node name="Default_music" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_40a0v")
