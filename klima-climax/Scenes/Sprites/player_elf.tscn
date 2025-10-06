@@ -691,3 +691,6 @@ zoom = Vector2(2, 2)
 position = Vector2(532, 307)
 rotation = 1.58836
 shape = SubResource("CapsuleShape2D_2c5bh")
+
+[node name="Arrow" parent="." instance=ExtResource("2_okcim")]
+position = Vector2(559, 292)

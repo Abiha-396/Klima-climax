@@ -8,7 +8,7 @@
 length = 34.9665
 
 [node name="Arrow" type="Area2D"]
-position = Vector2(918, 517)
+position = Vector2(-4, 0)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_xg5tt")
