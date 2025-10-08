@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://bm0uqcmo7eo3u"]
+[gd_scene load_steps=146 format=3 uid="uid://bm0uqcmo7eo3u"]
 
 [ext_resource type="Script" uid="uid://ntwyk6fbfl0e" path="res://Scripts/player_elf_real.gd" id="1_o2kaw"]
 [ext_resource type="Texture2D" uid="uid://bu3gsftc5etdd" path="res://Assets/Sprites/Elf/death/death_1.png" id="2_o2kaw"]
@@ -666,8 +666,11 @@ height = 40.0
 radius = 5.0
 height = 32.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_okcim"]
+radius = 3.0
+height = 26.0
+
 [node name="Elf" type="CharacterBody2D"]
-position = Vector2(82, 42)
 script = ExtResource("1_o2kaw")
 Ref_arrow = ExtResource("2_okcim")
 
@@ -675,9 +678,10 @@ Ref_arrow = ExtResource("2_okcim")
 position = Vector2(532, 249)
 scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Attack_boom"
+animation = &"Attack_straight"
 autoplay = "Idle"
-frame_progress = 0.860028
+frame = 6
+frame_progress = 0.408541
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(532, 292)
@@ -692,5 +696,8 @@ position = Vector2(532, 307)
 rotation = 1.58836
 shape = SubResource("CapsuleShape2D_2c5bh")
 
-[node name="Arrow" parent="." instance=ExtResource("2_okcim")]
-position = Vector2(559, 292)
+[node name="Arrow_placement" type="CollisionShape2D" parent="."]
+position = Vector2(553, 279)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_okcim")
+disabled = true

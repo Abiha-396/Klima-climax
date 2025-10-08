@@ -435,7 +435,6 @@ texture = ExtResource("3_jqrsn")
 
 [node name="Snow" parent="Background_general/CanvasLayer" index="1" instance=ExtResource("4_keyqw")]
 position = Vector2(529, 8)
-amount = 100
 
 [node name="Buttons" parent="Background_general/CanvasLayer2" index="0"]
 offset_right = -825.0

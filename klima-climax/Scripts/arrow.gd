@@ -9,9 +9,13 @@ func _ready():
 	GlobalScript.score
 	
 func _physics_process(delta):
-	# Adjusts the arrow direction 
-	direction= Vector2.RIGHT.rotated(rotation)
-	global_position += direction*speed*delta
+	position.x+= speed*delta
+	
+	
+	
+	## Adjusts the arrow direction 
+	#direction= Vector2.RIGHT.rotated(rotation)
+	#global_position += direction*speed*delta
 
 func destroy(): # Removes the bats
 	queue_free()
@@ -19,7 +23,6 @@ func destroy(): # Removes the bats
 
 func _on_area_entered(area):
 	destroy()
-
 
 
 func _on_body_entered(body):
