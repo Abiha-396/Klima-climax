@@ -2,13 +2,16 @@ class_name Player extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var Bat= $RayCast2D
+@onready var arrow_placement =$Arrow_placement
+@onready var Arrow =preload("res://Scenes/Sprites/arrow.tscn")
 @export	var gravity =400
 @export var JUMP_VELOCITY=-300
 @export var Ref_arrow: PackedScene
 const SPEED= 250
 var isAttacking: bool=false
 @export var rotation_speed = 10.0
-
+var can_shoot: bool=true
+var direction := Input.get_axis("Move_left", "Move_right")
 
 #func die():
 	#animated_sprite.play("Death")
@@ -29,10 +32,10 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("Jump") and is_on_floor():
 			velocity.y= 1.5*JUMP_VELOCITY
 
+
+
+
 	# Get the input direction and handle the movement/deceleration.
-	
-	
-	var direction := Input.get_axis("Move_left", "Move_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -82,14 +85,12 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.flip_h =false
 		
 	if Input.is_action_just_pressed("Attack"):
-		shoot_arrow()
+		shoots_arrow()
 	
 	
 	
 	#if global_position.y>100:
 		#die()
-
-
 
 	move_and_slide()
 
@@ -111,7 +112,32 @@ func shoot_arrow():
 	
 	
 	
+func update_direction():
+	if sign(direction)==-1:
+		animated_sprite.flip_h=true
+	elif sign(direction)==1:
+		animated_sprite.flip_h=false
+		
+#func handle_gravity():
 
+func shoots_arrow():
+	if Input.is_action_pressed("Shoot") and can_shoot and animated_sprite.animation !="Run":
+		can_shoot=false
+		animated_sprite.play("Attack_straight")
+		await get_tree().create_timer(0.7).timeout
+		var arrow = Arrow.instantiate()
+		var arrow_sprite= Arrow.get_node(Sprite2D)
+		Arrow.global_position=arrow_placement.global_position
+		
+		add_sibling(Arrow)
+		await animated_sprite.animation_finished
+		can_shoot=true
+		animated_sprite.play("Idle")
+	
+		pass
+	
+
+		
 
 	
 	
