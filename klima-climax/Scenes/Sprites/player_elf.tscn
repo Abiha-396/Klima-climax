@@ -507,9 +507,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("60_ihdec")
 }],
-"loop": true,
+"loop": false,
 "name": &"Roll",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -675,9 +675,8 @@ Ref_arrow = ExtResource("2_okcim")
 position = Vector2(532, 249)
 scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Attack_boom"
+animation = &"Roll"
 autoplay = "Idle"
-frame_progress = 0.860028
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(532, 292)

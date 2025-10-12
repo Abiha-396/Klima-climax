@@ -3,6 +3,7 @@ extends Node
 var score: int =0
 var life: int = 3
 var index:int =0
+var temp:int=0
 
 const Levels=[
 preload("res://Scenes/Levels/LEVEL 1.tscn"), 
@@ -21,7 +22,11 @@ func _process(delta):
 		
 		
 func change_to_next_level():
-	get_tree().change_scene_to_packed(Levels[index])
+	temp+=1
+	if temp<5:
+		get_tree().change_scene_to_packed(Levels[index])
+	else:
+		get_tree().change_scene_to_file("res://Scenes/UI/end_screen.tscn")
 	
 	
 		
