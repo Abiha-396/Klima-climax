@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://bm0uqcmo7eo3u"]
+[gd_scene load_steps=144 format=3 uid="uid://bm0uqcmo7eo3u"]
 
 [ext_resource type="Script" uid="uid://ntwyk6fbfl0e" path="res://Scripts/player_elf_real.gd" id="1_o2kaw"]
 [ext_resource type="Texture2D" uid="uid://bu3gsftc5etdd" path="res://Assets/Sprites/Elf/death/death_1.png" id="2_o2kaw"]
@@ -104,16 +104,15 @@
 [ext_resource type="Texture2D" uid="uid://wv7p46yu11lc" path="res://Assets/Sprites/Elf/run/run_4.png" id="64_5xi77"]
 [ext_resource type="Texture2D" uid="uid://dhllkp1twe5g5" path="res://Assets/Sprites/Elf/run/run_5.png" id="65_2u5d5"]
 [ext_resource type="Texture2D" uid="uid://hxpnpmcbwc6h" path="res://Assets/Sprites/Elf/run/run_6.png" id="66_4tk5d"]
-[ext_resource type="Texture2D" uid="uid://cxab036sjfslc" path="res://Assets/Sprites/Elf/run/run_7.png" id="67_ciudg"]
-[ext_resource type="Texture2D" uid="uid://bqd3shc1xug0y" path="res://Assets/Sprites/Elf/run/run_8.png" id="68_e382h"]
-[ext_resource type="Texture2D" uid="uid://cs3127jv8movb" path="res://Assets/Sprites/Elf/run/run_9.png" id="69_fo6fp"]
-[ext_resource type="Texture2D" uid="uid://cnt3x34kx40k3" path="res://Assets/Sprites/Elf/run/run_10.png" id="70_yl2xj"]
 [ext_resource type="Texture2D" uid="uid://b3r3s6yr441m3" path="res://Assets/Sprites/Elf/take_hit/take_hit_1.png" id="71_wjiit"]
 [ext_resource type="Texture2D" uid="uid://cycywhhl86u03" path="res://Assets/Sprites/Elf/take_hit/take_hit_2.png" id="72_noe4s"]
 [ext_resource type="Texture2D" uid="uid://b8f5lujvm4t6f" path="res://Assets/Sprites/Elf/take_hit/take_hit_3.png" id="73_547lh"]
 [ext_resource type="Texture2D" uid="uid://b5a646d6afxa1" path="res://Assets/Sprites/Elf/take_hit/take_hit_4.png" id="74_qfyqo"]
 [ext_resource type="Texture2D" uid="uid://dokicu17fxfdo" path="res://Assets/Sprites/Elf/take_hit/take_hit_5.png" id="75_wvgnk"]
 [ext_resource type="Texture2D" uid="uid://bfhrjjqg0tmfu" path="res://Assets/Sprites/Elf/take_hit/take_hit_6.png" id="76_ka63e"]
+[ext_resource type="Texture2D" uid="uid://dsquxesqfwlxp" path="res://Assets/Sprites/Elf/jump_up/jump_up_1.png" id="91_4476q"]
+[ext_resource type="Texture2D" uid="uid://b8pkq8mjl83i1" path="res://Assets/Sprites/Elf/jump_up/jump_up_2.png" id="92_ccjqy"]
+[ext_resource type="Texture2D" uid="uid://cv75oamjwamq6" path="res://Assets/Sprites/Elf/jump_up/jump_up_3.png" id="93_x1thi"]
 [ext_resource type="Texture2D" uid="uid://som8pv6nbagh" path="res://Assets/Sprites/Elf/sp_atk/sp_atk_1.png" id="108_4p21e"]
 [ext_resource type="Texture2D" uid="uid://nlnigyfhtfim" path="res://Assets/Sprites/Elf/sp_atk/sp_atk_2.png" id="109_6d68s"]
 [ext_resource type="Texture2D" uid="uid://bvnqbfoi0o2ir" path="res://Assets/Sprites/Elf/sp_atk/sp_atk_3.png" id="110_p22hn"]
@@ -211,7 +210,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_xq5x5")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_boom",
 "speed": 9.0
 }, {
@@ -261,7 +260,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_2u5d5")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_straight",
 "speed": 5.0
 }, {
@@ -296,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_wvgnk")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_sword",
 "speed": 5.0
 }, {
@@ -358,7 +357,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_s4oc1")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 10.0
 }, {
@@ -384,7 +383,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_osqeb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Fall",
 "speed": 7.0
 }, {
@@ -484,6 +483,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("91_4476q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ccjqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_x1thi")
+}],
+"loop": false,
+"name": &"Jump_short",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("53_xuted")
 }, {
 "duration": 1.0,
@@ -526,20 +539,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("66_4tk5d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67_ciudg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_e382h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69_fo6fp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("70_yl2xj")
 }],
-"loop": true,
+"loop": false,
 "name": &"Run",
 "speed": 10.0
 }, {
@@ -574,7 +575,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6jotq")
 }],
-"loop": true,
+"loop": false,
 "name": &"Run_back",
 "speed": 10.0
 }, {
@@ -630,7 +631,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("124_noe4s")
 }],
-"loop": true,
+"loop": false,
 "name": &"sp_attack",
 "speed": 5.0
 }, {
@@ -653,7 +654,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("76_ka63e")
 }],
-"loop": true,
+"loop": false,
 "name": &"take_hit",
 "speed": 10.0
 }]
@@ -675,8 +676,10 @@ Ref_arrow = ExtResource("2_okcim")
 position = Vector2(532, 249)
 scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Roll"
+animation = &"Run"
 autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(532, 292)

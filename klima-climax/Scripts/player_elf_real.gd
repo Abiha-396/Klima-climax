@@ -12,42 +12,45 @@ var isAttacking: bool=false
 
 
 
-#func die():
-	#animated_sprite.play("Death")
-	#get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
-
-
 func _physics_process(delta: float) -> void:
+	
 	#Variables
-	animated_sprite.flip_h=false
 	var direction := Input.get_axis("Move_left", "Move_right")
+	if direction<0:
+		animated_sprite.flip_h=true
+	else:
+		animated_sprite.flip_h=false
+	
 	
 	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-
+	
 	# Movement
-	if direction:
+	if direction: #move towards it
 		velocity.x = direction * SPEED
-		if direction>0:
+		if is_on_floor():
 			animated_sprite.play("Run")
-		else:
-			animated_sprite.play("Run_back")
-	else:
+		
+	else: # Come to a stop
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		
 		
 		
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		animated_sprite.play("Jump_short")
 		velocity.y = JUMP_VELOCITY
 		if Input.is_action_pressed("Jump") and is_on_floor():
 			velocity.y= 1.5*JUMP_VELOCITY
 		
 		
 	if Input.is_action_pressed("Move_up") and is_on_floor():
+		animated_sprite.play("Jump_short")
 		velocity.y= JUMP_VELOCITY
 		
 			
@@ -55,34 +58,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y= -JUMP_VELOCITY
 		animated_sprite.play("Roll")
 		
+	if is_on_floor() and velocity.x==0 and velocity.y==0 and !animated_sprite.is_playing():
+		animated_sprite.play("Idle")
 	
-	if Input.is_action_pressed("Attack"):
-		animated_sprite.play("sp_attack")
+		
 	
 	if GlobalScript.life<3:
 		animated_sprite.play("Death")
 		
-	# Animation logic
-	if is_on_floor_only():
-		animated_sprite.play("Idle")
-	if not is_on_floor():
-		if velocity.y < 0:
-			if direction > 0:
-				animated_sprite.play("Jump")
-			else:
-				animated_sprite.flip_h =true
-				animated_sprite.play("Jump")
 			
-	elif direction > 0:
-		animated_sprite.play("Idle")
-	
-	else:
-		if Input.is_action_pressed("Move_right") and is_on_floor():
-			animated_sprite.play("Run")
-		else:
-			animated_sprite.play("Idle")
 			
-		
 	if Input.is_action_just_pressed("Attack"):
 		shoot_arrow()
 	
@@ -98,6 +83,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 func shoot_arrow():
 	print("Arrow_shot")
+	animated_sprite.play("sp_attack")
 	if Ref_arrow:
 		var arrow= Ref_arrow.instantiate()
 		get_tree().current_scene.add_child(arrow)
@@ -109,6 +95,7 @@ func shoot_arrow():
 	
 	
 
-
-	
-	
+#if direction>0:
+			#animated_sprite.play("Run")
+		#else:
+			#animated_sprite.play("Run_back")
