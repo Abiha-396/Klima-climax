@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var ray=$RayCast2D
 
 @export	var gravity =400
 @export var JUMP_VELOCITY=-300
@@ -66,8 +67,11 @@ func _physics_process(delta: float) -> void:
 	if GlobalScript.life<3:
 		animated_sprite.play("Death")
 		
-			
-			
+	if Input.is_action_just_pressed("Laser"):
+		animated_sprite.play("sp_attack")
+		#add the raycast
+		
+
 	if Input.is_action_just_pressed("Attack"):
 		shoot_arrow()
 	
@@ -77,13 +81,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	animated_sprite.play("Death")
-	await get_tree().create_timer(0.05).timeout
+	await get_tree().create_timer(1.78).timeout
 	get_tree().reload_current_scene()
 	
 
 func shoot_arrow():
-	print("Arrow_shot")
-	animated_sprite.play("sp_attack")
+	animated_sprite.play("Attack_straight")
 	if Ref_arrow:
 		var arrow= Ref_arrow.instantiate()
 		get_tree().current_scene.add_child(arrow)
@@ -93,9 +96,3 @@ func shoot_arrow():
 		arrow.rotation=arrow_rotation
 	
 	
-	
-
-#if direction>0:
-			#animated_sprite.play("Run")
-		#else:
-			#animated_sprite.play("Run_back")

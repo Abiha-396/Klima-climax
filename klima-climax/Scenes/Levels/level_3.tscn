@@ -252,6 +252,15 @@ offset_bottom = 452.0
 text = "The Falling Shadows"
 label_settings = SubResource("LabelSettings_x1k1j")
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 313.0
+offset_top = 354.0
+offset_right = 838.0
+offset_bottom = 425.0
+text = "The arrows follow the mouse
+Just press the right-mouse-button"
+label_settings = SubResource("LabelSettings_x1k1j")
+
 [node name="Sounds" parent="." instance=ExtResource("10_osqx1")]
 stream = ExtResource("11_sy7oa")
 

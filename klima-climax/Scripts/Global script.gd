@@ -29,6 +29,10 @@ func change_to_next_level():
 		get_tree().change_scene_to_file("res://Scenes/UI/end_screen.tscn")
 	
 	
+func life_lost():
+	pass
+	#if receiving the signal, lives -1 and reload the scene+ show it with a label (in background)
+	
 		
 
 	

@@ -422,6 +422,20 @@ text = "Out and about on a pleasant day!
 label_settings = SubResource("LabelSettings_erdlw")
 autowrap_mode = 2
 
+[node name="Label2" type="Label" parent="."]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+offset_left = -1379.0
+offset_top = -386.0
+offset_right = -1062.0
+offset_bottom = -312.917
+text = "Use AWSD or arrow keys to move
+Space bar - High Jump
+"
+label_settings = SubResource("LabelSettings_erdlw")
+autowrap_mode = 2
+
 [node name="Sounds" parent="." instance=ExtResource("10_l1jbn")]
 stream = ExtResource("10_lsdoo")
 
