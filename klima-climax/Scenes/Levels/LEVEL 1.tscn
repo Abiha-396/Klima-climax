@@ -438,6 +438,7 @@ autowrap_mode = 2
 
 [node name="Sounds" parent="." instance=ExtResource("10_l1jbn")]
 stream = ExtResource("10_lsdoo")
+bus = &"BG"
 
 [node name="Trophy" parent="." instance=ExtResource("10_psup3")]
 position = Vector2(917, 540)

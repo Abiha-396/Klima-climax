@@ -263,6 +263,7 @@ label_settings = SubResource("LabelSettings_x1k1j")
 
 [node name="Sounds" parent="." instance=ExtResource("10_osqx1")]
 stream = ExtResource("11_sy7oa")
+bus = &"BG"
 
 [node name="Trophy" parent="." instance=ExtResource("5_sy7oa")]
 position = Vector2(8645, 467)

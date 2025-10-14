@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpd46arwia6k5"]
+[gd_scene load_steps=7 format=3 uid="uid://cpd46arwia6k5"]
 
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_1gwaw"]
 [ext_resource type="Script" uid="uid://dnjbxitkrw4k6" path="res://Scripts/end_screen.gd" id="1_bhpww"]
 [ext_resource type="LabelSettings" uid="uid://cptlsmnpyapo2" path="res://Assets/Fonts/Button themes/Title_front.tres" id="2_bhpww"]
 [ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/UI/home_button.tscn" id="4_gdxnu"]
+[ext_resource type="PackedScene" uid="uid://nbqc0ouptc45" path="res://Scenes/UI/Sounds.tscn" id="5_jsc3u"]
+[ext_resource type="AudioStream" uid="uid://cl0hlwuvphinc" path="res://Assets/Sounds/End_screen_win.mp3" id="6_rao6n"]
 
 [node name="End screen" type="Control"]
 layout_mode = 3
@@ -41,3 +43,7 @@ offset_left = 903.0
 offset_top = 515.0
 offset_right = 441.0
 offset_bottom = 201.0
+
+[node name="Sounds" parent="." instance=ExtResource("5_jsc3u")]
+stream = ExtResource("6_rao6n")
+bus = &"BG"

@@ -16,7 +16,6 @@ func _on_timer_timeout():
 func _on_area_2d_body_entered(body):
 	self.queue_free()
 	GlobalScript.life -=1
-	print(GlobalScript.life)
 	get_tree().reload_current_scene()
 	
 	

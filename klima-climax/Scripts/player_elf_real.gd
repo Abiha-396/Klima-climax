@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export	var gravity =400
 @export var JUMP_VELOCITY=-300
 @export var Ref_arrow: PackedScene
+@export var kill_zone: PackedScene
 @export var rotation_speed = 10.0
 
 const SPEED= 250
@@ -13,7 +14,12 @@ var isAttacking: bool=false
 
 
 
+func _ready():
+	GlobalScript.life
+
 func _physics_process(delta: float) -> void:
+	
+
 	
 	#Variables
 	var direction := Input.get_axis("Move_left", "Move_right")
@@ -58,14 +64,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Roll"):
 		velocity.y= -JUMP_VELOCITY
 		animated_sprite.play("Roll")
-		
+		 
 	if is_on_floor() and velocity.x==0 and velocity.y==0 and !animated_sprite.is_playing():
 		animated_sprite.play("Idle")
 	
 		
-	
-	if GlobalScript.life<3:
-		animated_sprite.play("Death")
 		
 	if Input.is_action_just_pressed("Laser"):
 		animated_sprite.play("sp_attack")
@@ -79,11 +82,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+
 func _on_killzone_body_entered(body: Node2D) -> void:
 	animated_sprite.play("Death")
 	await get_tree().create_timer(1.78).timeout
 	get_tree().reload_current_scene()
-	
+	GlobalScript.life-=1
 
 func shoot_arrow():
 	animated_sprite.play("Attack_straight")

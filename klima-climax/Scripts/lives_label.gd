@@ -1,15 +1,11 @@
 extends Control
-@onready var label = $Label
+@onready var coin_label= $Label
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+func _ready():
+	GlobalScript.life
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	label.text= "You won!!"
-	
-
-	
-	
+func _process(delta):
+	coin_label.text= str(GlobalScript.life)

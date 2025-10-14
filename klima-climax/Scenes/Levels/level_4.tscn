@@ -505,6 +505,7 @@ label_settings = SubResource("LabelSettings_keyqw")
 
 [node name="Sounds" parent="." instance=ExtResource("11_slbhm")]
 stream = ExtResource("12_i5g5g")
+bus = &"BG"
 
 [editable path="Background_general"]
 [editable path="Elf"]

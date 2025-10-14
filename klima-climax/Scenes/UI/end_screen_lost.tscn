@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://tyex4w2eajcm"]
+[gd_scene load_steps=7 format=3 uid="uid://tyex4w2eajcm"]
 
 [ext_resource type="Script" uid="uid://befwcx1wooe8w" path="res://Scripts/end_screen_lost.gd" id="1_ssvtl"]
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="2_kpfra"]
 [ext_resource type="LabelSettings" uid="uid://cptlsmnpyapo2" path="res://Assets/Fonts/Button themes/Title_front.tres" id="3_ti506"]
 [ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/UI/home_button.tscn" id="4_v3vf5"]
+[ext_resource type="PackedScene" uid="uid://nbqc0ouptc45" path="res://Scenes/UI/Sounds.tscn" id="5_f3o3h"]
+[ext_resource type="AudioStream" uid="uid://b2dguat2qo5x8" path="res://Assets/Sounds/Lose.mp3" id="6_n3b13"]
 
 [node name="End screen" type="Control"]
 layout_mode = 3
@@ -41,3 +43,6 @@ offset_left = 903.0
 offset_top = 515.0
 offset_right = 441.0
 offset_bottom = 201.0
+
+[node name="Sounds" parent="." instance=ExtResource("5_f3o3h")]
+stream = ExtResource("6_n3b13")

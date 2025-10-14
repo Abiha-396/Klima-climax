@@ -1,6 +1,7 @@
 [gd_scene load_steps=159 format=3 uid="uid://8c0ktfb3la0l"]
 
 [ext_resource type="Texture2D" uid="uid://bc4d5muh21rg5" path="res://Assets/Sprites/Flea/idle.png" id="1_0ujq8"]
+[ext_resource type="Script" uid="uid://rujjcqhmx564" path="res://Scripts/giant_flea.gd" id="1_ulwaj"]
 [ext_resource type="Texture2D" uid="uid://c2uj76x71rb1j" path="res://Assets/Sprites/Flea/jump.png" id="2_xe5te"]
 [ext_resource type="Texture2D" uid="uid://b5py23iciy76r" path="res://Assets/Sprites/Flea/laser_attack_forward.png" id="3_ulwaj"]
 [ext_resource type="Texture2D" uid="uid://b1oci8nweq8ti" path="res://Assets/Sprites/Flea/walk.png" id="4_s3bsm"]
@@ -612,10 +613,6 @@ region = Rect2(424, 567, 212, 189)
 atlas = ExtResource("4_s3bsm")
 region = Rect2(636, 567, 212, 189)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s12dj"]
-atlas = ExtResource("4_s3bsm")
-region = Rect2(848, 567, 212, 189)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2qqyn"]
 animations = [{
 "frames": [{
@@ -1086,9 +1083,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_16klu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s12dj")
 }],
 "loop": true,
 "name": &"walk",
@@ -1096,14 +1090,17 @@ animations = [{
 }]
 
 [node name="Giant flea" type="CharacterBody2D"]
+script = ExtResource("1_ulwaj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(277, 61)
 shape = SubResource("CircleShape2D_0ujq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 512
+visibility_layer = 512
 position = Vector2(282, 78)
 sprite_frames = SubResource("SpriteFrames_2qqyn")
-animation = &"jump"
-frame = 23
-frame_progress = 1.0
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.156072

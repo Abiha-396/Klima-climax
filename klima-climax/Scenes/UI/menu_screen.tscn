@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd14vbmwoixik"]
+[gd_scene load_steps=12 format=3 uid="uid://dd14vbmwoixik"]
 
 [ext_resource type="Texture2D" uid="uid://dfnu8mbtev3ar" path="res://Assets/Backgrounds/nature_4/origbig.png" id="1_f1kxn"]
 [ext_resource type="LabelSettings" uid="uid://c5kia2j4rjbg8" path="res://Assets/Fonts/Button themes/Title_smalle.tres" id="2_f1kxn"]
 [ext_resource type="LabelSettings" uid="uid://cvyg5wdkoyaac" path="res://Assets/Fonts/Button themes/Menu text.tres" id="3_4s2ig"]
 [ext_resource type="PackedScene" uid="uid://5o7phu2ql3dh" path="res://Scenes/UI/home_button.tscn" id="4_vrhsl"]
+[ext_resource type="AudioStream" uid="uid://da02j1hl2ph2l" path="res://Assets/Sounds/Background.mp3" id="5_06ymm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrhsl"]
 
@@ -105,3 +106,8 @@ Backgrounds
 "
 label_settings = ExtResource("3_4s2ig")
 autowrap_mode = 3
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_06ymm")
+autoplay = true
+bus = &"BG"

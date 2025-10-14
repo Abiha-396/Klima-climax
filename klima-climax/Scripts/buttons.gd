@@ -1,5 +1,7 @@
 extends Control
 
+var audio_bus= AudioServer.get_bus_index("BG")
+
 func _ready():
 	GlobalScript.index
 
@@ -12,3 +14,8 @@ func _on_restart_button_pressed() -> void:
 	#get_tree().reload_current_scene()
 	GlobalScript.index+=1
 	GlobalScript.change_to_next_level()
+
+
+func _on_sound_button_pressed():
+	AudioServer.set_bus_mute(audio_bus,not AudioServer.is_bus_mute(audio_bus))
+	
