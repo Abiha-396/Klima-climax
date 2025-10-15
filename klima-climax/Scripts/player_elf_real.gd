@@ -68,6 +68,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and velocity.x==0 and velocity.y==0 and !animated_sprite.is_playing():
 		animated_sprite.play("Idle")
 	
+	if GlobalScript.life<1:
+		await get_tree().create_timer(1.78).timeout
+		animated_sprite.play("Death")
 		
 		
 	if Input.is_action_just_pressed("Laser"):
@@ -84,8 +87,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_killzone_body_entered(body: Node2D) -> void:
-	animated_sprite.play("Death")
-	await get_tree().create_timer(1.78).timeout
 	get_tree().reload_current_scene()
 	GlobalScript.life-=1
 

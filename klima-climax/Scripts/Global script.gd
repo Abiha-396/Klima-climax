@@ -18,7 +18,8 @@ func _ready():
 	
 func _process(delta):
 	if life<1:
-		get_tree().change_scene_to_file("res://Scenes/end_screen_lost.tscn")
+		get_tree().change_scene_to_file("res://Scenes/UI/end_screen_lost.tscn")
+		
 		
 		
 func change_to_next_level():
