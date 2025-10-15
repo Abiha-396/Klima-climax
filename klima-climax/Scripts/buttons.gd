@@ -11,9 +11,8 @@ func _on_home_button_pressed() -> void:
 
 
 func _on_restart_button_pressed() -> void:
-	#get_tree().reload_current_scene()
-	GlobalScript.index+=1
-	GlobalScript.change_to_next_level()
+	get_tree().reload_current_scene()
+	
 
 
 func _on_sound_button_pressed():

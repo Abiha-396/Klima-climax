@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b5py23iciy76r" path="res://Assets/Sprites/Flea/laser_attack_forward.png" id="3_ulwaj"]
 [ext_resource type="Texture2D" uid="uid://b1oci8nweq8ti" path="res://Assets/Sprites/Flea/walk.png" id="4_s3bsm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0ujq8"]
-radius = 101.02
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h5na"]
 atlas = ExtResource("1_0ujq8")
 region = Rect2(0, 0, 214, 182)
@@ -1089,18 +1086,15 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ujq8"]
+radius = 101.02
+
 [node name="Giant flea" type="CharacterBody2D"]
 light_mask = 512
 visibility_layer = 512
 collision_layer = 512
 collision_mask = 512
 script = ExtResource("1_ulwaj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 512
-visibility_layer = 512
-position = Vector2(274, 77)
-shape = SubResource("CircleShape2D_0ujq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 512
@@ -1110,3 +1104,19 @@ sprite_frames = SubResource("SpriteFrames_2qqyn")
 animation = &"walk"
 autoplay = "walk"
 frame_progress = 0.156072
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 513
+visibility_layer = 513
+position = Vector2(274, 77)
+shape = SubResource("CircleShape2D_0ujq8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+light_mask = 512
+visibility_layer = 512
+position = Vector2(274, 77)
+shape = SubResource("CircleShape2D_0ujq8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

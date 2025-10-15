@@ -77,10 +77,9 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("sp_attack")
 		if ray.is_colliding():
 			var collider= ray.get_collider()
-			print(collider)
 			if collider is CharacterBody2D:
 				await get_tree().create_timer(1.20).timeout
-				collider.hide()
+				collider.queue_free()
 		
 
 	if Input.is_action_just_pressed("Attack"):

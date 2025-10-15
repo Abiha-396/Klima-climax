@@ -223,6 +223,7 @@ position = Vector2(4, -3)
 shape = SubResource("CapsuleShape2D_l4wr6")
 
 [node name="Bat" parent="." instance=ExtResource("3_dl55b")]
+light_mask = 1
 position = Vector2(3241, 76)
 
 [node name="TileMap" type="TileMap" parent="."]

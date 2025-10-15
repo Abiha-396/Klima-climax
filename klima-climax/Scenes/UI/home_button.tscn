@@ -23,11 +23,14 @@ script = ExtResource("1_eppnf")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_3xqhr")
+texture_pressed = ExtResource("3_yxep6")
 texture_hover = ExtResource("3_yxep6")
+texture_disabled = ExtResource("2_3xqhr")
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton"]
 layout_mode = 2
