@@ -680,7 +680,7 @@ kill_zone = ExtResource("3_okcim")
 position = Vector2(532, 249)
 scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Attack_straight"
+animation = &"Run_back"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

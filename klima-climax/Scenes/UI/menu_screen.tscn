@@ -84,10 +84,9 @@ Are you ready to pay the price and get the most out of this adventure, or did th
 
 How to Play:
 
-Use AWSD or arrow keys to move; and the spacebar for a bigger jump.
-To shoot.....
-Every level has a checkpoint. You won't have to start from the beginning after a simple mistake. But from Level 3 onwards, every hit counts, with the 3rd one marking your defeat.
-Flea......
+Use WASD or arrow keys to move; and the spacebar for a bigger jump.
+To shoot, press the right mouse button.
+You get three tries and then you lose, so use your time wisely!
 
 
 
@@ -101,8 +100,35 @@ May the odds be ever in you favour!
 
 
                                     					           Credits
-Assets
-Backgrounds
+
+
+Assets: 
+
+Heart pixel art- Nicole Marie T
+Robin- Wooden Game UI by Prinbles.itch.io
+Elemental- Leaf by Chierit.itch.io
+Platform- Brackeys
+Cave bat by Pop Shop Packs.itch.io
+2d animated monster character, laser flea by Ismartal- created by Krita and Spriter Pro
+
+Backgrounds:
+
+ Free Game Assets (GUI,Sprite,Tilesets) 
+
+
+Fonts: 
+
+Text: 	ARTHO font by twin letter
+UI and titles: 		Scabber font CC0- Designed by GGBotNet
+
+Sounds: 
+
+https://pixabay.com/users/freesound_community-46691455/
+https://pixabay.com/sound-effects/walking-on-stone-beach-168152/
+https://pixabay.com/sound-effects/beach-sound-with-seagulls-218923/
+https://pixabay.com/sound-effects/designed-ice-freezing-sequences-02-116786/
+https://pixabay.com/music/upbeat-retro-gaming-271301/
+
 "
 label_settings = ExtResource("3_4s2ig")
 autowrap_mode = 3
