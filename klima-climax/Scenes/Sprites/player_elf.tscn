@@ -634,7 +634,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"sp_attack",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -680,8 +680,10 @@ kill_zone = ExtResource("3_okcim")
 position = Vector2(532, 249)
 scale = Vector2(1, 0.999999)
 sprite_frames = SubResource("SpriteFrames_fpp0g")
-animation = &"Run_back"
+animation = &"sp_attack"
 autoplay = "Idle"
+frame = 4
+frame_progress = 0.879279
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(532, 292)
@@ -695,3 +697,11 @@ zoom = Vector2(2, 2)
 position = Vector2(532, 307)
 rotation = 1.58836
 shape = SubResource("CapsuleShape2D_2c5bh")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+light_mask = 512
+visibility_layer = 512
+position = Vector2(522, 286)
+target_position = Vector2(254, 0)
+collision_mask = 512
+collide_with_areas = true

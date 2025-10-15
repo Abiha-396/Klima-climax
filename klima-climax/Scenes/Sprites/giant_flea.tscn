@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1oci8nweq8ti" path="res://Assets/Sprites/Flea/walk.png" id="4_s3bsm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ujq8"]
-radius = 68.2642
+radius = 101.02
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h5na"]
 atlas = ExtResource("1_0ujq8")
@@ -1090,10 +1090,16 @@ animations = [{
 }]
 
 [node name="Giant flea" type="CharacterBody2D"]
+light_mask = 512
+visibility_layer = 512
+collision_layer = 512
+collision_mask = 512
 script = ExtResource("1_ulwaj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(277, 61)
+light_mask = 512
+visibility_layer = 512
+position = Vector2(274, 77)
 shape = SubResource("CircleShape2D_0ujq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

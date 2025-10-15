@@ -73,9 +73,14 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("Death")
 		
 		
-	if Input.is_action_just_pressed("Laser"):
+	if Input.is_action_just_pressed("Laser_attack"):
 		animated_sprite.play("sp_attack")
-		#add the raycast
+		if ray.is_colliding():
+			var collider= ray.get_collider()
+			print(collider)
+			if collider is CharacterBody2D:
+				await get_tree().create_timer(1.20).timeout
+				collider.hide()
 		
 
 	if Input.is_action_just_pressed("Attack"):
