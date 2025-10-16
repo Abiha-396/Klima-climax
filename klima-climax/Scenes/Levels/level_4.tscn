@@ -313,7 +313,7 @@ pattern_0 = SubResource("TileMapPattern_eb4ip")
 pattern_1 = SubResource("TileMapPattern_ecora")
 
 [sub_resource type="Animation" id="Animation_gsxik"]
-length = 2.0
+length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -322,7 +322,7 @@ tracks/0/path = NodePath("../Moving_platform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 2.93333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1885, 173), Vector2(2400, 173)]
@@ -352,7 +352,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_3asqb"]
-length = 2.0
+length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -361,10 +361,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.96667),
+"times": PackedFloat32Array(-0.0395, 2.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1950, 226), Vector2(2413, 226)]
+"values": [Vector2(1750, 226), Vector2(2413, 226)]
 }
 
 [sub_resource type="Animation" id="Animation_h0uxt"]
@@ -479,7 +479,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Moving_platform" parent="platforms" instance=ExtResource("8_h0uxt")]
-position = Vector2(1950, 226)
+position = Vector2(1758.71, 226)
 constant_linear_velocity = Vector2(1875, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/Moving_platform"]

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed : int =200
+@export var speed : int =300
 var direction: Vector2
 @export var Ref_bat: PackedScene
 
